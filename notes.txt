@@ -1,0 +1,13 @@
+This way, a taxi can have many passengers and a passenger can have many taxis!
+
+Taxi
+has_many :rides
+has_many :passengers, through: :rides 
+
+Passengers
+has_many :rides
+has_many :taxis, through: :rides 
+
+Rides
+belongs_to :passengers 
+belongs_to :taxis 
